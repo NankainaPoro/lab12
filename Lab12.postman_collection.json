@@ -1,0 +1,353 @@
+{
+	"info": {
+		"_postman_id": "2dfec071-2232-47a3-b733-ae0f988dccf0",
+		"name": "Lab12",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30353182",
+		"_collection_link": "https://www.postman.com/security-geologist-53818773/workspace/lab12-vakulenko/collection/30353182-2dfec071-2232-47a3-b733-ae0f988dccf0?action=share&source=collection_link&creator=30353182"
+	},
+	"item": [
+		{
+			"name": "algebra",
+			"item": [
+				{
+					"name": "Division+mod",
+					"item": [
+						{
+							"name": "div",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "divZero",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "divisionInt",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response body is correct\", function () {\r",
+											"    pm.expect(pm.response.text()).to.eql(\"9.0\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/int_div?x=50&y=5.5",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"int_div"
+									],
+									"query": [
+										{
+											"key": "x",
+											"value": "50"
+										},
+										{
+											"key": "y",
+											"value": "5.5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "divIntZero",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "mod",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response body is correct\", function () {\r",
+											"    pm.expect(pm.response.text()).to.eql(\"2.0\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/mod?x=50&y=3.0",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"mod"
+									],
+									"query": [
+										{
+											"key": "x",
+											"value": "50"
+										},
+										{
+											"key": "y",
+											"value": "3.0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "modZero",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "addition",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body is correct\", function () {\r",
+									"    pm.expect(pm.response.text()).to.eql(\"8.0\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/add?x=5&y=5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"add"
+							],
+							"query": [
+								{
+									"key": "x",
+									"value": "5"
+								},
+								{
+									"key": "y",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subtraction",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "multiplication",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "sqrt",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "sqrt_negative",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response body is correct\", function () {\r",
+									"    pm.expect(pm.response.text()).to.eql(\"Введите положительный аргумент\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/sqrt?x=-2.25",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"sqrt"
+							],
+							"query": [
+								{
+									"key": "x",
+									"value": "-2.25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pow",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "factorial",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "trigonometry",
+			"item": [
+				{
+					"name": "sin",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "cos",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "tan",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response body is correct\", function () {\r",
+									"    pm.expect(pm.response.text()).to.eql(\"1.5574077246549023\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/trig?function=tan&x=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"trig"
+							],
+							"query": [
+								{
+									"key": "function",
+									"value": "tan"
+								},
+								{
+									"key": "x",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "https://vakulenkods.pythonanywhere.com",
+			"type": "string"
+		}
+	]
+}
